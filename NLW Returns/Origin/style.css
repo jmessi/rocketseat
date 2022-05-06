@@ -1,4 +1,4 @@
-/*==============GERAL======================================*/
+/*==============GLOBAL======================================*/
 
 * {
 	margin: 0;
@@ -7,6 +7,7 @@
 }
 
 :root {
+	/*=== COLORS ===*/
 	--primary-color: hsl(170, 100%, 26%);
 	--headline: hsl(210, 11%, 15%);
 	--paragraph: hsl(210, 9%, 31%);
@@ -14,9 +15,16 @@
 	--brand-beige: hsl(39, 100%, 97%);
 	--brand-light: hsl(148, 23%, 89%);
 
+	--bg-light: hsl(180, 14%, 97%);
+
+	/*=== FONTS ===*/
 	font-size: 62.5%; /* 1rem = 10px */
 
 	--nav-height: 7.2rem;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 html,
@@ -31,7 +39,9 @@ body {
 
 	text-align: center;
 
-  overflow: overlay;
+	overflow: overlay;
+
+	background-color: var(--bg-light);
 }
 
 .wrapper {
@@ -42,6 +52,10 @@ body {
 
 ul {
 	list-style: none;
+}
+
+section {
+	padding-block: 10rem;
 }
 
 /*==============HEADER======================================*/
@@ -146,7 +160,7 @@ header img {
 .stat p {
 	margin: 0;
 	color: var(--primary-color);
-  font-size: 1.6rem;
+	font-size: 1.6rem;
 	line-height: 150%;
 }
 
@@ -183,9 +197,9 @@ nav.scroll button path {
 }
 
 nav button {
-  background: none;
-  border: none;
-  cursor: pointer;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 /*==============MENU-EXPANDED======================================*/
@@ -195,7 +209,7 @@ body.menu-expanded {
 }
 
 body.menu-expanded > :not(nav) {
-  display: none;
+	display: none;
 }
 
 .menu,
@@ -220,7 +234,7 @@ body.menu-expanded .menu {
 	width: 100vw;
 	height: 100vh;
 
-  padding-top: var(--nav-height);
+	padding-top: var(--nav-height);
 }
 
 body.menu-expanded nav {
@@ -240,9 +254,8 @@ body.menu-expanded nav {
 }
 
 .menu ul li a {
-
-  color: white;
-  text-decoration: none;
+	color: white;
+	text-decoration: none;
 }
 
 .menu .button {
@@ -271,8 +284,8 @@ body.menu-expanded nav {
 
 body.menu-expanded .logo,
 body.menu-expanded nav button {
-  position: relative;
-  z-index: 100;
+	position: relative;
+	z-index: 100;
 }
 
 body.menu-expanded .logo path {
@@ -281,4 +294,50 @@ body.menu-expanded .logo path {
 
 body.menu-expanded button path {
 	stroke: white;
+}
+
+/*==============SERVICES======================================*/
+
+#services header h4 {
+	font-size: 1.4rem;
+	line-height: 150%;
+	letter-spacing: 0.08rem;
+
+	color: var(--primary-color);
+
+	text-transform: uppercase;
+
+	margin-bottom: 1.6rem;
+}
+
+#services header h2 {
+	font-size: 3rem;
+	line-height: 3.9rem;
+
+	color: var(--headline);
+
+	margin-bottom: 6rem;
+}
+
+#services .cards {
+	display: flex;
+	flex-direction: column;
+	gap: 3.2rem;
+}
+
+#services .card {
+	padding: 2.4rem;
+	text-align: left;
+
+	/* Secondary Colors/White */
+
+	background: white;
+	/* Primary Colors/brand-green-light */
+
+	border: 1px solid var(--brand-light);
+	border-radius: .6rem;
+}
+
+#services .card h3 {
+	margin-block: 1.6rem;
 }
